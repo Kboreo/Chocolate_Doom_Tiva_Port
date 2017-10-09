@@ -1,7 +1,6 @@
 #include "project.h"
-
-//Momentary switches are connected to
-//
+#include <stdio.h>
+#include <stdint.h>
 
 //*****************************************************************************
 //
@@ -16,143 +15,107 @@ __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-uint8_t test = 0;
-void accel2color()
-{
-	static uint32_t red, blue, green;
-	static uint32_t red_n, blue_n, green_n;
-	
-	
-	red_n = ADC_Values[4];
-	blue_n = ADC_Values[5];		
-	green_n = ADC_Values[6];	
-	
-	red_n >>= 4; 
-	blue_n >>= 4;
-	green_n >>= 4;
-	
-	
-	WSSetAllLeds((uint8_t)(red_n-red),(uint8_t)(blue_n-blue),(uint8_t)(green_n-green),0);
 
-	red = red_n;
-	blue = blue_n;
-	green = green_n;
-}
-
-void PlayArea ()
-{
-	int32_t scratch;
-	scratch = GPIOPinRead(GPIO_PORTF_BASE,GPIO_PIN_4|GPIO_PIN_0);
-	scratch = ~scratch & (GPIO_PIN_4|GPIO_PIN_0) ; 
-	switch (scratch)
-	{
-		case GPIO_PIN_4:
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2,0xF);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1,0);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3,0);
-			break;
-		case GPIO_PIN_0:
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1,0xF);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3,0);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2,0);
-			break;
-		case (GPIO_PIN_4|GPIO_PIN_0):
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1,0);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3,0xF);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2,0);
-			break;
-		default:
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1,0);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3,0);
-			GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2,0);
-			break;
-	}
-}
-
-//call this periodically to update services
-void ServiceRoutine()
-{
-		UpdateSwitches();
-	//	WSRand();
-//		WSNormalizeAll();
-		WSSendMatrix(RGB_TYPE);
-		SysTickWait10ms(2);
-}
-
-//Hardware abstraction Layer.  Setup all the hardware
-//Do it once.  
 void SetupHardware()
 {
-	SetupPLL();								// Setup the clock to 80Mhz
-	SetupSystick();           // initialize SysTick timer
-	UartSetup();							// Setup the Uart to print to terminal
-	GpioSetup();							// GPIO
-	SetupADC();								// Setup the ADC module
-	WSinitPin();							// Pin for WS LEDs
+	UartSetup();
+//	UartSetup2();
+}
+
+void UnlockPins()
+{
+	//Need to Unlock PF4
+	HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+	HWREG(GPIO_PORTF_BASE + GPIO_O_CR) = 0xFF;
+	HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = 0; 
 	
 }
 
 int  main(void)
 {
-		uint8_t temp;
-		uint32_t ADC[10];
-		int32_t bytesread;
-	
-		HALSasu();								//Custom Startup script for TIVA board
-															//Unlocks pins, turns on all ports, etc.
-	
-		SetupHardware();					// Call all HAL setup functions
 		
-//		while(1)
-//		{
-//			for (int i=0;i<LED_SIZE;i++)
-//			{
-//					for(int j=0;j<i+1;j++)WSShiftColor(i);
-//			}
-//			
-//			WSSendMatrix(RGBW_TYPE);
-//			SysTickWait10ms(1);
-//		}
-//	
+		uint8_t temp;
+    volatile uint32_t ui32Loop;
 	
-//		while(1)
-//		{
-//			WSShiftColor(0);
-//			WSSetAllLeds(rgbwmatrix[0][RED_IDX],rgbwmatrix[0][GRE_IDX],rgbwmatrix[0][BLU_IDX],rgbwmatrix[0][WHI_IDX]);
-//			WSSendMatrix(RGBW_TYPE);
-//			SysTickWait10ms(2);
-//		}
-//	
-//	
+	
+	
+    // Enable the GPIO port that is used for the on-board LED.
+		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    SetupHardware();
 
+		
+		// Check if the peripheral access is enabled.
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
+    {
+    
+		}
+		
+		UnlockPins();		//Function that unlocks certain pins that are needed.
+    
+		// Enable the GPIO pin for the LED (PF3).  Set the direction as output, and
+    // enable the GPIO pin for digital function.
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3|GPIO_PIN_2); // set pin 3 and 2 as output
+		GPIOPinTypeGPIOInput(GPIO_PORTF_BASE, GPIO_PIN_4|GPIO_PIN_0); // set pin 4 and 0 as input
+		//these two switches need an internal pull up on pins
+		GPIOPadConfigSet(GPIO_PORTF_BASE,GPIO_PIN_0|GPIO_PIN_4,GPIO_STRENGTH_2MA,GPIO_PIN_TYPE_STD_WPU);//set internal pullup R for pin 0 and 4
+		
+		//int x;  //Int that contains the output of the button SW2
+		//int y;  //Int that contains the output of the button SW1
+		
+		int x = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0); // set x equal to the output of button SW2 
+		int y = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4); // set x equal to the output of button SW1
+		
+		while(x == 1)  //While loop that keeps checking until x does not equal 1, meaning SW2 was pushed. 
+		{
+			x = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0);	
+		}
+			
+		
     while(1)
     {
-				UARTCharPut(UART0_BASE, (uint8_t)(ADC[0] >> 4));
-				UARTCharPut(UART0_BASE, 0xFF);
-			  //UARTCharPut(UART0_BASE, temp);
-			  //temp++;
+			x = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0); // set x equal to the output of button SW2
+			y = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4); // set x equal to the output of button SW1
+			
+			if (x && y == 0) //if loop that checks if SW1 and SW2 are pressed, if they are both pressed, blue LED will light.
+			{
+				GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0xF);  // Turn on blue LED
+				
+        // Delay for a bit.
+        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        {
+        }
+
+        // Turn off the LED.
+        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x0);
+
+        // Delay for a bit.
+        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        {
+        }
+				
+			}
+			else  //Else green LED will light.
+			{
+				UARTCharPut(UART0_BASE, temp);
+			  temp++;
 				//UARTCharPut(UART0_BASE, '\n');
 				//UARTCharPut(UART0_BASE, '\r');
+        // Turn on the LED.
+        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0xF);
 
-				PlayArea();
-				ServiceRoutine();
-			//	printf("Hello Everyone\n\r");
-			//	WSSetChar(0,0,0,0);
-				if (MySwitches.SW5==1)
-				{
-					WSShiftColor_static(0);
-					WSSetAllLeds(rgbwmatrix[0][RED_IDX],rgbwmatrix[0][GRE_IDX],rgbwmatrix[0][BLU_IDX],rgbwmatrix[0][WHI_IDX]);
-				}
-				else 
-				{
-					WSSetAllLeds(0,0,0,0);
-				}
-				//accel2color();
-				//WSSendMatrix(RGB_TYPE);
-				//ADCReadChan();				
+        // Delay for a bit.
+        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        {
+        }
+
+        // Turn off the LED.
+        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0x0);
+
+        // Delay for a bit.
+        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        {
+        }
+			}
     }
-	
-	
 }
-
 
