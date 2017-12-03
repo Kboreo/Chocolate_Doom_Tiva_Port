@@ -44,10 +44,6 @@
 
 #include "src/HAL_UART.h"
 #include "src/HAL_GPIO.h"
-#include "src/LEDStick_helper.h"
-#include "src/LCD_helper.h"
 #include "src/HAL_PLL.h"
 #include "src/HAL_Systick.h"
-#include "src/HAL_ADC.h"
-#include "src/HAL_Sasu.h"
 

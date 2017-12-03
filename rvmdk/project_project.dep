@@ -1,131 +1,88 @@
 Dependencies for Project 'project', Target 'project': (DO NOT MODIFY !)
-F (.\project.c)(0x59DAC04E)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\project.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\project.crf --depend .\rvmdk\project.d)
-I (project.h)(0x59DAB50F)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x588C2C04)
-I (inc/hw_memmap.h)(0x59B00CF9)
-I (driverlib/adc.h)(0x59B00CF6)
-I (driverlib/aes.h)(0x59B00CF6)
-I (driverlib/can.h)(0x59B00CF6)
-I (driverlib/comp.h)(0x59B00CF6)
-I (driverlib/cpu.h)(0x59B00CF6)
-I (driverlib/crc.h)(0x59B00CF6)
-I (driverlib/debug.h)(0x59B00CF6)
-I (driverlib/des.h)(0x59B00CF6)
-I (driverlib/eeprom.h)(0x59B00CF6)
-I (driverlib/emac.h)(0x59B00CF6)
-I (driverlib/epi.h)(0x59B00CF6)
-I (driverlib/flash.h)(0x59B00CF6)
-I (driverlib/fpu.h)(0x59B00CF6)
-I (driverlib/gpio.h)(0x59B00CF7)
-I (driverlib/hibernate.h)(0x59B00CF7)
-I (driverlib/i2c.h)(0x59B00CF7)
-I (driverlib/interrupt.h)(0x59B00CF7)
-I (driverlib/lcd.h)(0x59B00CF7)
-I (driverlib/mpu.h)(0x59B00CF7)
-I (driverlib/onewire.h)(0x59B00CF7)
-I (driverlib/pin_map.h)(0x59B00CF7)
-I (driverlib/pwm.h)(0x59B00CF7)
-I (driverlib/qei.h)(0x59B00CF7)
-I (driverlib/rom.h)(0x59B00CF7)
-I (driverlib/rom_map.h)(0x59B00CF7)
-I (driverlib/rtos_bindings.h)(0x59B00CF7)
-I (driverlib/shamd5.h)(0x59B00CF7)
-I (driverlib/ssi.h)(0x59B00CF7)
-I (driverlib/sw_crc.h)(0x59B00CF7)
-I (driverlib/sysctl.h)(0x59B00CF7)
-I (driverlib/sysexc.h)(0x59B00CF7)
-I (driverlib/systick.h)(0x59B00CF8)
-I (driverlib/timer.h)(0x59B00CF8)
-I (driverlib/uart.h)(0x59B00CF8)
-I (driverlib/udma.h)(0x59B00CF8)
-I (driverlib/usb.h)(0x59B00CF8)
-I (driverlib/watchdog.h)(0x59B00CF8)
-I (./inc/tm4c123gh6pm.h)(0x59B00CFC)
-I (src/HAL_UART.h)(0x59B00CFD)
-I (src/HAL_GPIO.h)(0x59B00CFD)
-I (.\inc\hw_gpio.h)(0x59B00CF9)
-I (.\inc\hw_types.h)(0x59B00CFA)
-I (src/LEDStick_helper.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588C2C04)
-I (src/LCD_helper.h)(0x59B00CFD)
-I (src/HAL_Systick.h)(0x59B00CFD)
-I (src/HAL_PLL.h)(0x59B00CFD)
-I (src/HAL_ADC.h)(0x59B00CFD)
-I (src/HAL_Sasu.h)(0x59C279F6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588C2C04)
-F (.\startup_rvmdk.S)(0x59B00CF6)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\rvmdk\startup_rvmdk.lst -o .\rvmdk\startup_rvmdk.o --depend .\rvmdk\startup_rvmdk.d)
-F (.\project.h)(0x59DAB50F)()
-F (.\inc\driverlib.lib)(0x59B00CF8)()
+F (.\project.c)(0x5A24743B)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\rvmdk\\" -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\project.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\project.crf --depend .\rvmdk\project.d)
+I (project.h)(0x5A2474E4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x588C3A14)
+I (inc/hw_memmap.h)(0x5A09F9A7)
+I (driverlib/adc.h)(0x5A09F9A7)
+I (driverlib/aes.h)(0x5A09F9A7)
+I (driverlib/can.h)(0x5A09F9A7)
+I (driverlib/comp.h)(0x5A09F9A7)
+I (driverlib/cpu.h)(0x5A09F9A7)
+I (driverlib/crc.h)(0x5A09F9A7)
+I (driverlib/debug.h)(0x5A09F9A7)
+I (driverlib/des.h)(0x5A09F9A7)
+I (driverlib/eeprom.h)(0x5A09F9A7)
+I (driverlib/emac.h)(0x5A09F9A7)
+I (driverlib/epi.h)(0x5A09F9A7)
+I (driverlib/flash.h)(0x5A09F9A7)
+I (driverlib/fpu.h)(0x5A09F9A7)
+I (driverlib/gpio.h)(0x5A09F9A7)
+I (driverlib/hibernate.h)(0x5A09F9A7)
+I (driverlib/i2c.h)(0x5A09F9A7)
+I (driverlib/interrupt.h)(0x5A09F9A7)
+I (driverlib/lcd.h)(0x5A09F9A7)
+I (driverlib/mpu.h)(0x5A09F9A7)
+I (driverlib/onewire.h)(0x5A09F9A7)
+I (driverlib/pin_map.h)(0x5A09F9A7)
+I (driverlib/pwm.h)(0x5A09F9A7)
+I (driverlib/qei.h)(0x5A09F9A7)
+I (driverlib/rom.h)(0x5A09F9A7)
+I (driverlib/rom_map.h)(0x5A09F9A7)
+I (driverlib/rtos_bindings.h)(0x5A09F9A7)
+I (driverlib/shamd5.h)(0x5A09F9A7)
+I (driverlib/ssi.h)(0x5A09F9A7)
+I (driverlib/sw_crc.h)(0x5A09F9A7)
+I (driverlib/sysctl.h)(0x5A09F9A7)
+I (driverlib/sysexc.h)(0x5A09F9A7)
+I (driverlib/systick.h)(0x5A09F9A7)
+I (driverlib/timer.h)(0x5A09F9A7)
+I (driverlib/uart.h)(0x5A09F9A7)
+I (driverlib/udma.h)(0x5A09F9A7)
+I (driverlib/usb.h)(0x5A09F9A7)
+I (driverlib/watchdog.h)(0x5A09F9A7)
+I (./inc/tm4c123gh6pm.h)(0x5A09F9A7)
+I (src/HAL_UART.h)(0x5A09F9A7)
+I (src/HAL_GPIO.h)(0x5A09F9A7)
+I (.\inc\hw_gpio.h)(0x5A09F9A7)
+I (.\inc\hw_types.h)(0x5A09F9A7)
+I (src/HAL_PLL.h)(0x5A09F9A7)
+I (src/HAL_Systick.h)(0x5A09F9A7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588C3A14)
+F (.\startup_rvmdk.S)(0x5A09F9A7)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1"--list .\rvmdk\startup_rvmdk.lst -o .\rvmdk\startup_rvmdk.o --depend .\rvmdk\startup_rvmdk.d)
+F (.\project.h)(0x5A2474E4)()
+F (.\inc\driverlib.lib)(0x5A22ED3E)()
 F (.\README.txt)(0x00000000)()
-F (.\src\LCD_Helper.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\lcd_helper.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\lcd_helper.crf --depend .\rvmdk\lcd_helper.d)
-I (src\LCD_helper.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\hw_memmap.h)(0x59B00CF9)
-I (.\driverlib\gpio.h)(0x59B00CF7)
-I (.\driverlib\uart.h)(0x59B00CF8)
-I (.\inc\tm4c123gh6pm.h)(0x59B00CFC)
-I (.\inc\hw_gpio.h)(0x59B00CF9)
-I (.\inc\hw_types.h)(0x59B00CFA)
-I (src\HAL_Systick.h)(0x59B00CFD)
-I (.\driverlib\systick.h)(0x59B00CF8)
-F (.\src\LEDStick_Helper.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\ledstick_helper.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\ledstick_helper.crf --depend .\rvmdk\ledstick_helper.d)
-I (src\LEDStick_Helper.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\hw_memmap.h)(0x59B00CF9)
-I (.\driverlib\gpio.h)(0x59B00CF7)
-I (.\driverlib\uart.h)(0x59B00CF8)
-I (src\../inc/tm4c123gh6pm.h)(0x59B00CFC)
-I (.\inc\hw_gpio.h)(0x59B00CF9)
-I (.\inc\hw_types.h)(0x59B00CFA)
-I (.\driverlib\systick.h)(0x59B00CF8)
-F (.\src\HAL_PLL.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_pll.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_pll.crf --depend .\rvmdk\hal_pll.d)
-I (src\HAL_PLL.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\tm4c123gh6pm.h)(0x59B00CFC)
-F (.\src\HAL_Systick.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_systick.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_systick.crf --depend .\rvmdk\hal_systick.d)
-I (src\HAL_Systick.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (src\../inc/tm4c123gh6pm.h)(0x59B00CFC)
-I (.\driverlib\systick.h)(0x59B00CF8)
-F (.\src\HAL_ADC.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_adc.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_adc.crf --depend .\rvmdk\hal_adc.d)
-I (src\HAL_ADC.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\hw_memmap.h)(0x59B00CF9)
-I (.\driverlib\gpio.h)(0x59B00CF7)
-I (.\driverlib\adc.h)(0x59B00CF6)
-I (.\driverlib\uart.h)(0x59B00CF8)
-I (.\inc\tm4c123gh6pm.h)(0x59B00CFC)
-I (.\inc\hw_gpio.h)(0x59B00CF9)
-I (.\inc\hw_types.h)(0x59B00CFA)
-F (.\src\HAL_GPIO.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_gpio.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_gpio.crf --depend .\rvmdk\hal_gpio.d)
-I (src\HAL_GPIO.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\hw_memmap.h)(0x59B00CF9)
-I (.\driverlib\gpio.h)(0x59B00CF7)
-I (.\driverlib\uart.h)(0x59B00CF8)
-I (src\../inc/tm4c123gh6pm.h)(0x59B00CFC)
-I (.\inc\hw_gpio.h)(0x59B00CF9)
-I (.\inc\hw_types.h)(0x59B00CFA)
-F (.\src\HAL_UART.c)(0x59B00CFD)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_uart.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_uart.crf --depend .\rvmdk\hal_uart.d)
-I (src\HAL_UART.h)(0x59B00CFD)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C2C04)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C2C04)
-I (.\driverlib\sysctl.h)(0x59B00CF7)
-I (.\inc\hw_memmap.h)(0x59B00CF9)
-I (.\driverlib\gpio.h)(0x59B00CF7)
-I (.\driverlib\uart.h)(0x59B00CF8)
-I (src\../inc/tm4c123gh6pm.h)(0x59B00CFC)
+F (.\src\HAL_PLL.c)(0x5A09F9A7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\rvmdk\\" -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_pll.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_pll.crf --depend .\rvmdk\hal_pll.d)
+I (src\HAL_PLL.h)(0x5A09F9A7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C3A14)
+I (.\driverlib\sysctl.h)(0x5A09F9A7)
+I (.\inc\tm4c123gh6pm.h)(0x5A09F9A7)
+F (.\src\HAL_Systick.c)(0x5A09F9A7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\rvmdk\\" -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_systick.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_systick.crf --depend .\rvmdk\hal_systick.d)
+I (src\HAL_Systick.h)(0x5A09F9A7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C3A14)
+I (src\../inc/tm4c123gh6pm.h)(0x5A09F9A7)
+I (.\driverlib\systick.h)(0x5A09F9A7)
+F (.\src\HAL_GPIO.c)(0x5A09F9A7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\rvmdk\\" -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_gpio.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_gpio.crf --depend .\rvmdk\hal_gpio.d)
+I (src\HAL_GPIO.h)(0x5A09F9A7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C3A14)
+I (.\driverlib\sysctl.h)(0x5A09F9A7)
+I (.\inc\hw_memmap.h)(0x5A09F9A7)
+I (.\driverlib\gpio.h)(0x5A09F9A7)
+I (.\driverlib\uart.h)(0x5A09F9A7)
+I (src\../inc/tm4c123gh6pm.h)(0x5A09F9A7)
+I (.\inc\hw_gpio.h)(0x5A09F9A7)
+I (.\inc\hw_types.h)(0x5A09F9A7)
+F (.\src\HAL_UART.c)(0x5A09F9A7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections --asm --interleave --asm_dir ".\\rvmdk\\" -I ..\.. -I .\driverlib -I .\src -I .\inc --c99-I.\RTE\_project-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="524" -D_RTE_ -DTM4C123GH6PM -Drvmdk -DPART_TM4C123GH6PM -DTARGET_IS_TM4C123_RB1-o .\rvmdk\hal_uart.o --list_dir ".\\rvmdk\\" --list --omf_browse .\rvmdk\hal_uart.crf --depend .\rvmdk\hal_uart.d)
+I (src\HAL_UART.h)(0x5A09F9A7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x588C3A14)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588C3A14)
+I (.\driverlib\sysctl.h)(0x5A09F9A7)
+I (.\inc\hw_memmap.h)(0x5A09F9A7)
+I (.\driverlib\gpio.h)(0x5A09F9A7)
+I (.\driverlib\uart.h)(0x5A09F9A7)
+I (src\../inc/tm4c123gh6pm.h)(0x5A09F9A7)
